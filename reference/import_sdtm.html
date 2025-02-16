@@ -16,6 +16,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
       </ul></div>
@@ -41,6 +42,8 @@
 <span>  <span class="va">path</span>,</span>
 <span>  extension_choice <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">".sas7bdat"</span>, <span class="st">".xpt"</span><span class="op">)</span>,</span>
 <span>  ignore_case <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  auto_supp <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  auto_dtc <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -72,6 +75,15 @@ and a warning will be given for subsequent files.</p></dd>
 
 <dt id="arg-ignore-case">ignore_case<a class="anchor" aria-label="anchor" href="#arg-ignore-case"></a></dt>
 <dd><p>Passed to <code>list.files</code> when loading a directory.</p></dd>
+
+
+<dt id="arg-auto-supp">auto_supp<a class="anchor" aria-label="anchor" href="#arg-auto-supp"></a></dt>
+<dd><p>Automatically combine –SUPP data with the main SDTM domain
+and remove the –SUPP data from the returned list of data.frames.</p></dd>
+
+
+<dt id="arg-auto-dtc">auto_dtc<a class="anchor" aria-label="anchor" href="#arg-auto-dtc"></a></dt>
+<dd><p>Automatically convert –DTC columns to date/times?</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>

@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-02-16T13:54Z
+last_built: 2025-02-16T18:04Z
 urls:
   reference: https://humanpred.github.io/Rsdtm/reference
   article: https://humanpred.github.io/Rsdtm/articles

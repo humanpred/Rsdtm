@@ -3,6 +3,7 @@
 <url><loc>https://humanpred.github.io/Rsdtm/LICENSE-text.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/authors.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/index.html</loc></url>
+<url><loc>https://humanpred.github.io/Rsdtm/news/index.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/append_no_duplicate_names.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/c_to_n.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/dateany_to_date.html</loc></url>
@@ -49,8 +50,6 @@
 <url><loc>https://humanpred.github.io/Rsdtm/reference/sdtm_time_actual.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/simplify_sdtm_names.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/standardize_sdtm_id.html</loc></url>
-<url><loc>https://humanpred.github.io/Rsdtm/reference/strip_attributes.html</loc></url>
-<url><loc>https://humanpred.github.io/Rsdtm/reference/supp_reformat.html</loc></url>
 <url><loc>https://humanpred.github.io/Rsdtm/reference/valid_versions.html</loc></url>
 </urlset>
 
