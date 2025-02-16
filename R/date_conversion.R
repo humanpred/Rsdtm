@@ -3,8 +3,11 @@
 #'
 #' @param x The data to convert
 #' @param date_col_pattern A regex to search column names for dates to convert.
-#' @param truncated Passed to \code{lubridate::ymd_hms}
-#' @param ... Additional arguments passed to \code{lubridate::ymd_hms}
+#' @param truncated Passed to `lubridate::ymd_hms()` or `lubridate::ymd()`; the
+#'   `truncated` argument is always considered relative to `ymd_hms` formatting,
+#'   so it is used as `truncated - 3` for dates.
+#' @param ... Additional arguments passed to `lubridate::ymd_hms()` or
+#'   `lubridate::ymd()`
 #' @return The data with the date converted.  Note that all dates will be
 #'   returned as POSIXct objects, so partial dates will appear as the
 #' @family Date management and conversion
@@ -21,14 +24,46 @@ sdtm_dtc_to_datetime.list <- function(x, ...) {
 
 #' @rdname sdtm_dtc_to_datetime
 #' @export
-sdtm_dtc_to_datetime.data.frame <- function(x, date_col_pattern="DTC$", truncated=5, ...) {
+sdtm_dtc_to_datetime.Date <- function(x, ...) {
+  x
+}
+
+#' @rdname sdtm_dtc_to_datetime
+#' @export
+sdtm_dtc_to_datetime.POSIXt <- function(x, ...) {
+  x
+}
+
+#' @rdname sdtm_dtc_to_datetime
+#' @export
+sdtm_dtc_to_datetime.character <- function(x, truncated=5, ...) {
+  # Treat empty strings as NA
+  x_current <- x
+  x_current[x_current %in% ""] <- NA_character_
+
+  # Detect columns that only contain dates and load them as dates rather than
+  # datetimes
+  is_date <-
+    grepl(
+      x = x_current,
+      pattern = paste0("^", pattern_ISO8601_calendar_date(), "$")
+    )
+  if (all(is.na(x_current) | is_date)) {
+    # If it is a date
+    x <- lubridate::ymd(x_current, truncated=max(truncated - 3, 0), ...)
+  } else {
+    # Otherwise try to consider it a datetime
+    x <- lubridate::ymd_hms(x_current, truncated=truncated, ...)
+  }
+  x
+}
+
+#' @rdname sdtm_dtc_to_datetime
+#' @export
+sdtm_dtc_to_datetime.data.frame <- function(x, date_col_pattern="DTC$", ...) {
   date_col_names <- grep(names(x), pattern=date_col_pattern, value=TRUE)
   for (current_name in date_col_names) {
-    if (!lubridate::is.POSIXt(x[[current_name]])) {
-      x[[current_name]] <- ymd_hms(x[[current_name]], truncated=truncated, ...)
-    } else {
-      message("Column ", current_name, " is already a datetime object.") # nocov
-    }
+    x[[current_name]] <- sdtm_dtc_to_datetime(x[[current_name]])
   }
   x
 }

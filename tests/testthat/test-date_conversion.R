@@ -3,7 +3,8 @@ test_that("sdtm_dtc_to_datetime", {
     ld_sdtm <- import_sdtm(path = test_path("example-sdtm"), auto_dtc = TRUE),
     regexp = "Detected domain SUPPDM from data."
   )
-  expect_s3_class(ld_sdtm$DM$RFSTDTC, "POSIXt")
+  expect_s3_class(ld_sdtm$DM$RFPENDTC, "POSIXt")
+  expect_s3_class(ld_sdtm$DM$RFSTDTC, "Date")
 })
 
 test_that("generate_dtc works", {

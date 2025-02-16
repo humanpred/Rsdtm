@@ -3,6 +3,9 @@
 \name{sdtm_dtc_to_datetime}
 \alias{sdtm_dtc_to_datetime}
 \alias{sdtm_dtc_to_datetime.list}
+\alias{sdtm_dtc_to_datetime.Date}
+\alias{sdtm_dtc_to_datetime.POSIXt}
+\alias{sdtm_dtc_to_datetime.character}
 \alias{sdtm_dtc_to_datetime.data.frame}
 \title{Convert the character representation of the date in an original SDTM dataset
 to a POSIXct object.}
@@ -11,16 +14,25 @@ sdtm_dtc_to_datetime(x, ...)
 
 \method{sdtm_dtc_to_datetime}{list}(x, ...)
 
-\method{sdtm_dtc_to_datetime}{data.frame}(x, date_col_pattern = "DTC$", truncated = 5, ...)
+\method{sdtm_dtc_to_datetime}{Date}(x, ...)
+
+\method{sdtm_dtc_to_datetime}{POSIXt}(x, ...)
+
+\method{sdtm_dtc_to_datetime}{character}(x, truncated = 5, ...)
+
+\method{sdtm_dtc_to_datetime}{data.frame}(x, date_col_pattern = "DTC$", ...)
 }
 \arguments{
 \item{x}{The data to convert}
 
-\item{...}{Additional arguments passed to \code{lubridate::ymd_hms}}
+\item{...}{Additional arguments passed to `lubridate::ymd_hms()` or
+`lubridate::ymd()`}
+
+\item{truncated}{Passed to `lubridate::ymd_hms()` or `lubridate::ymd()`; the
+`truncated` argument is always considered relative to `ymd_hms` formatting,
+so it is used as `truncated - 3` for dates.}
 
 \item{date_col_pattern}{A regex to search column names for dates to convert.}
-
-\item{truncated}{Passed to \code{lubridate::ymd_hms}}
 }
 \value{
 The data with the date converted.  Note that all dates will be
