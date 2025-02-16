@@ -22,6 +22,7 @@
 import_sdtm <- function(path,
                         extension_choice = c(".sas7bdat", ".xpt"),
                         ignore_case = TRUE,
+                        auto_supp = FALSE,
                         ...) {
   stopifnot(
     is.character(path),
@@ -53,6 +54,11 @@ import_sdtm <- function(path,
       ...
     )
     ret <- append_no_duplicate_names(ret, tmp_ret, method=stop)
+  }
+
+  if (auto_supp) {
+    browser()
+    stop()
   }
   ret
 }
