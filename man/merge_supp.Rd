@@ -4,33 +4,11 @@
 \alias{merge_supp}
 \title{Merge a supplementary dataset into a primary dataset}
 \usage{
-merge_supp(
-  primary,
-  supplementary,
-  remove_attributes = c("label"),
-  auto_convert = FALSE
-)
+merge_supp(...)
 }
 \arguments{
-\item{primary}{the data.frame of the primary dataset}
-
-\item{supplementary}{the data.frame of the supplementary dataset}
-
-\item{remove_attributes}{If \code{TRUE}, remove all attributes from all
-columns (this will break many classes); if \code{FALSE}, remove no
-attributes from any columns; if a character, remove those attributes from
-the columns.}
-
-\item{auto_convert}{should the data be automatically converted using
-`type_convert()`?}
-}
-\value{
-\code{primary} merged with \code{supplementary} where new column
-  names come from the \code{QNAM} column in \code{supplementary}
+\item{...}{Ignored}
 }
 \description{
-Merge a supplementary dataset into a primary dataset
-}
-\seealso{
-\code{\link{supp_reformat}}
+This function is defunct. Use `metatools::combine_supp()` instead.
 }

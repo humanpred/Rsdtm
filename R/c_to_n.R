@@ -57,23 +57,27 @@ c_to_n.character <- function(x, ...,
 }
 
 #' @describeIn c_to_n For factors.
+#' @export
 c_to_n.factor <- function(x, ...) {
   c_to_n.character(as.character(x), ...)
 }
 
 #' @describeIn c_to_n For numeric vectors.
+#' @export
 c_to_n.numeric <- function(x, ...) {
   warning("`c_to_n` is generally not called on a numeric vector.  Please verify code.")
   x
 }
 
 #' @describeIn c_to_n For integer vectors.
+#' @export
 c_to_n.integer <- function(x, ...) {
   warning("`c_to_n` is generally not called on an integer vector.  Please verify code.")
   x
 }
 
 #' @describeIn c_to_n For logical vectors (only handles all-NA case).
+#' @export
 c_to_n.logical <- function(x, ...) {
   if (!all(is.na(x))) {
     warning("`c_to_n` does not set non-NA logical values to numeric.")
@@ -84,6 +88,7 @@ c_to_n.logical <- function(x, ...) {
 #' @describeIn c_to_n For data.frames and similar, finds columns matching the
 #'   regular expression pattern `"^..(ST|OR).*C$"`.  data.frame method does not
 #'   replace numeric columns that already exist.
+#' @export
 c_to_n.data.frame <- function(x, ..., verbose=TRUE) {
   columns_named_c <- grep(pattern="^..(ST|OR).*C$", x=names(x), value=TRUE)
   columns_named_n <- grep(pattern="^..(ST|OR).*N$", x=names(x), value=TRUE)

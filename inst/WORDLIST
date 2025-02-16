@@ -25,7 +25,10 @@ datetime
 ddd
 difftime
 ggplots
+hms
 https
+lubridate
 trimws
 wikipedia
+ymd
 yyyy
