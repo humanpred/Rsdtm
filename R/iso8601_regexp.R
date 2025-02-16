@@ -587,7 +587,7 @@ pattern_ISO8601_time <- function(truncated=0,
   ret
 }
 
-#' Generate a regular expression for ISO 8601 timezones.
+#' Generate a regular expression for ISO 8601 time zones.
 #'
 #' @details Offsets are always multiples of 15 minutes, so if the minute part is
 #'   provided, it must be 00, 15, 30, or 45.  The range allowed by this function

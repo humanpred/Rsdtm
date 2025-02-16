@@ -17,7 +17,7 @@ append_no_duplicate_names(
 \item{x, values, after}{See \code{base::append}}
 
 \item{ignore_blank}{Ignore blank names? (Blank names \code{""} occur when an
-unnamed vector is appeneded to a named vector.)}
+unnamed vector is appended to a named vector.)}
 
 \item{method}{Function to notify the user if a duplicate is provided?  It is
 called with a message indicating the name of the duplicate. Typically this

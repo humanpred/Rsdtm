@@ -9,7 +9,7 @@ combination}
 \describe{
   \item{SDTM}{The SDTM version}
   \item{IG_NAME}{The implementation guide (IG) name being used}
-  \item{IG_VERSION}{The implemetation guide (IG) version}
+  \item{IG_VERSION}{The implementation guide (IG) version}
   \item{archived}{The SDTM version/IG pair has been archived (and should not
     be used for current studies)}
 }

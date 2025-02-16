@@ -121,7 +121,7 @@ import_sdtm_file <- function(path,
 #' \code{values}
 #' @param x,values,after See \code{base::append}
 #' @param ignore_blank Ignore blank names? (Blank names \code{""} occur when an
-#'   unnamed vector is appeneded to a named vector.)
+#'   unnamed vector is appended to a named vector.)
 #' @param method Function to notify the user if a duplicate is provided?  It is
 #'   called with a message indicating the name of the duplicate. Typically this
 #'   will be \code{stop} or \code{warning}.
