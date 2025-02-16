@@ -1,8 +1,8 @@
 # Rsdtm
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/billdenney/Rsdtm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/billdenney/Rsdtm/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/billdenney/Rsdtm/branch/main/graph/badge.svg)](https://app.codecov.io/gh/billdenney/Rsdtm?branch=main)
+[![R-CMD-check](https://github.com/humanpred/Rsdtm/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/humanpred/Rsdtm/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/humanpred/Rsdtm/graph/badge.svg)](https://app.codecov.io/gh/humanpred/Rsdtm)
 [![CRAN status](https://www.r-pkg.org/badges/version/Rsdtm)](https://CRAN.R-project.org/package=Rsdtm)
 <!-- badges: end -->
 
@@ -15,7 +15,7 @@ The goal of Rsdtm is to simplify SDTM data management and file creation for R.
 To install the development version, run the following:
 
 ``` r
-devtools::install_github("billdenney/Rsdtm")
+devtools::install_github("humanpred/Rsdtm")
 ```
 
 ### CRAN (someday)
@@ -32,5 +32,5 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(Rsdtm)
-d <- import_sdtm("/director/to/data")
+d <- import_sdtm("/directory/to/data")
 ```
