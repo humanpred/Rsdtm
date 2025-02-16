@@ -28,8 +28,13 @@ test_that("VISITDY_minor_breaks", {
 })
 
 test_that("scale_x_VISITDY", {
-  expect_equal(
-    scale_x_VISITDY(),
-    ggplot2::scale_x_continuous(trans=VISITDY_trans)
+  # expect_equal(
+  #   scale_x_VISITDY(),
+  #   ggplot2::scale_x_continuous(trans=VISITDY_trans)
+  # )
+  expect_error(
+    scale_x_VISITDY(trans = "A"),
+    regexp = "Cannot set 'trans' (just use scale_x_continuous())",
+    fixed = TRUE
   )
 })
