@@ -8,6 +8,7 @@
 #' @param ignore_case Passed to \code{list.files} when loading a directory.
 #' @param auto_supp Automatically combine --SUPP data with the main SDTM domain
 #'   and remove the --SUPP data from the returned list of data.frames.
+#' @param auto_dtc Automatically convert --DTC columns to date/times?
 #' @param return_type When loading a single file, what type of output should be
 #'   provided?
 #' @param ... Arguments passed to \code{rio::import}
@@ -25,6 +26,7 @@ import_sdtm <- function(path,
                         extension_choice = c(".sas7bdat", ".xpt"),
                         ignore_case = TRUE,
                         auto_supp = FALSE,
+                        auto_dtc = FALSE,
                         ...) {
   stopifnot(
     is.character(path),
@@ -68,6 +70,10 @@ import_sdtm <- function(path,
       ret[[current_domain]] <- metatools::combine_supp(ret[[current_domain]], supp = ret[[current_supp]])
       ret[[current_supp]] <- NULL
     }
+  }
+
+  if (auto_dtc) {
+    ret <- sdtm_dtc_to_datetime(ret, ...)
   }
   ret
 }

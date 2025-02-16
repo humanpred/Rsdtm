@@ -16,9 +16,7 @@ sdtm_dtc_to_datetime <- function(x, ...) {
 #' @rdname sdtm_dtc_to_datetime
 #' @export
 sdtm_dtc_to_datetime.list <- function(x, ...) {
-  lapply(X=x,
-         FUN=sdtm_dtc_to_datetime,
-         ...)
+  lapply(X=x, FUN=sdtm_dtc_to_datetime, ...)
 }
 
 #' @rdname sdtm_dtc_to_datetime
@@ -29,7 +27,7 @@ sdtm_dtc_to_datetime.data.frame <- function(x, date_col_pattern="DTC$", truncate
     if (!lubridate::is.POSIXt(x[[current_name]])) {
       x[[current_name]] <- ymd_hms(x[[current_name]], truncated=truncated, ...)
     } else {
-      message("Column ", current_name, " is already a datetime object.")
+      message("Column ", current_name, " is already a datetime object.") # nocov
     }
   }
   x

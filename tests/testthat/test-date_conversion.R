@@ -1,3 +1,11 @@
+test_that("sdtm_dtc_to_datetime", {
+  expect_message(
+    ld_sdtm <- import_sdtm(path = test_path("example-sdtm"), auto_dtc = TRUE),
+    regexp = "Detected domain SUPPDM from data."
+  )
+  expect_s3_class(ld_sdtm$DM$RFSTDTC, "POSIXt")
+})
+
 test_that("generate_dtc works", {
   expect_equal(
     generate_dtc(datetime="2020-05-01T01:02:03"),

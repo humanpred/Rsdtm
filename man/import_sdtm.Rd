@@ -11,6 +11,7 @@ import_sdtm(
   extension_choice = c(".sas7bdat", ".xpt"),
   ignore_case = TRUE,
   auto_supp = FALSE,
+  auto_dtc = FALSE,
   ...
 )
 
@@ -36,6 +37,8 @@ and a warning will be given for subsequent files.}
 
 \item{auto_supp}{Automatically combine --SUPP data with the main SDTM domain
 and remove the --SUPP data from the returned list of data.frames.}
+
+\item{auto_dtc}{Automatically convert --DTC columns to date/times?}
 
 \item{...}{Arguments passed to \code{rio::import}}
 
