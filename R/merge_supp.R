@@ -167,6 +167,7 @@ strip_attributes <- function(x, specific=NULL, ...) {
 }
 
 #' @rdname strip_attributes
+#' @export
 strip_attributes.data.frame <- function(x, specific=NULL, columns_only=TRUE, ...) {
   if (columns_only) {
     for (nm in seq_along(x)) {
@@ -179,6 +180,7 @@ strip_attributes.data.frame <- function(x, specific=NULL, columns_only=TRUE, ...
 }
 
 #' @rdname strip_attributes
+#' @export
 strip_attributes.default <- function(x, specific=NULL, ...) {
   if (is.null(specific)) {
     attributes(x) <- NULL
