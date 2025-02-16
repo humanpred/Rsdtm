@@ -25,7 +25,7 @@ A data frame with 29 variables and 83 observations:
  \item{LBSTRESU}{Standard Units, character}
  \item{LBSTNRLO}{Reference Range Lower Limit-Std Units, numeric}
  \item{LBSTNRHI}{Reference Range Upper Limit-Std Units, numeric}
- \item{LBSTNRC}{Reference Range for Char Rslt-Std Units, character}
+ \item{LBSTNRC}{Reference Range for Char Result-Std Units, character}
  \item{LBNRIND}{Reference Range Indicator, character}
  \item{LBSPEC}{Specimen Type, character}
  \item{LBMETHOD}{Method of Test or Examination, character}

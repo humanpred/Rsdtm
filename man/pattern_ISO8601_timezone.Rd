@@ -2,12 +2,12 @@
 % Please edit documentation in R/iso8601_regexp.R
 \name{pattern_ISO8601_timezone}
 \alias{pattern_ISO8601_timezone}
-\title{Generate a regular expression for ISO 8601 timezones.}
+\title{Generate a regular expression for ISO 8601 time zones.}
 \usage{
 pattern_ISO8601_timezone()
 }
 \description{
-Generate a regular expression for ISO 8601 timezones.
+Generate a regular expression for ISO 8601 time zones.
 }
 \details{
 Offsets are always multiples of 15 minutes, so if the minute part is
@@ -24,37 +24,37 @@ https://en.wikipedia.org/wiki/UTC_offset
 }
 \seealso{
 Other ISO8601 patterns: 
-\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_any_date}()},
-\code{\link{pattern_ISO8601_calendar_datetime}()},
+\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_calendar_date}()},
+\code{\link{pattern_ISO8601_calendar_datetime}()},
 \code{\link{pattern_ISO8601_calendar_year}()},
-\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_ordinal_date}()},
+\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_time}()},
-\code{\link{pattern_ISO8601_week_datetime}()},
-\code{\link{pattern_ISO8601_week_date}()}
+\code{\link{pattern_ISO8601_week_date}()},
+\code{\link{pattern_ISO8601_week_datetime}()}
 
 Other Date management and conversion: 
 \code{\link{dateany_to_date}()},
 \code{\link{generate_dtc}()},
-\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_calendar_date}()},
+\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_ordinal_datetime}()},
-\code{\link{is_ISO8601_timezone}()},
 \code{\link{is_ISO8601_time}()},
+\code{\link{is_ISO8601_timezone}()},
 \code{\link{is_ISO8601_week_datetime}()},
 \code{\link{make_dy}()},
-\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_any_date}()},
-\code{\link{pattern_ISO8601_calendar_datetime}()},
+\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_calendar_date}()},
+\code{\link{pattern_ISO8601_calendar_datetime}()},
 \code{\link{pattern_ISO8601_calendar_year}()},
-\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_ordinal_date}()},
+\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_time}()},
-\code{\link{pattern_ISO8601_week_datetime}()},
 \code{\link{pattern_ISO8601_week_date}()},
+\code{\link{pattern_ISO8601_week_datetime}()},
 \code{\link{sdtm_dtc_to_datetime}()},
 \code{\link{sdtm_first_dose}()},
 \code{\link{sdtm_time_actual}()}

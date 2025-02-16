@@ -23,32 +23,32 @@ Determine if a string matches an ISO 8601 date/time using week date notation
 }
 \seealso{
 Other ISO8601 String checking: 
-\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_calendar_date}()},
+\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_ordinal_datetime}()},
-\code{\link{is_ISO8601_timezone}()},
-\code{\link{is_ISO8601_time}()}
+\code{\link{is_ISO8601_time}()},
+\code{\link{is_ISO8601_timezone}()}
 
 Other Date management and conversion: 
 \code{\link{dateany_to_date}()},
 \code{\link{generate_dtc}()},
-\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_calendar_date}()},
+\code{\link{is_ISO8601_calendar_datetime}()},
 \code{\link{is_ISO8601_ordinal_datetime}()},
-\code{\link{is_ISO8601_timezone}()},
 \code{\link{is_ISO8601_time}()},
+\code{\link{is_ISO8601_timezone}()},
 \code{\link{make_dy}()},
-\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_any_date}()},
-\code{\link{pattern_ISO8601_calendar_datetime}()},
+\code{\link{pattern_ISO8601_any_datetime}()},
 \code{\link{pattern_ISO8601_calendar_date}()},
+\code{\link{pattern_ISO8601_calendar_datetime}()},
 \code{\link{pattern_ISO8601_calendar_year}()},
-\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_ordinal_date}()},
-\code{\link{pattern_ISO8601_timezone}()},
+\code{\link{pattern_ISO8601_ordinal_datetime}()},
 \code{\link{pattern_ISO8601_time}()},
-\code{\link{pattern_ISO8601_week_datetime}()},
+\code{\link{pattern_ISO8601_timezone}()},
 \code{\link{pattern_ISO8601_week_date}()},
+\code{\link{pattern_ISO8601_week_datetime}()},
 \code{\link{sdtm_dtc_to_datetime}()},
 \code{\link{sdtm_first_dose}()},
 \code{\link{sdtm_time_actual}()}
