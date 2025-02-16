@@ -15,3 +15,18 @@ test_that("import_sdtm", {
     regexp = "Detected domain DM from data."
   )
 })
+
+test_that("import_sdtm auto_supp automatically merges --SUPP domains", {
+  expect_message(
+    ld_sdtm <- import_sdtm(path = test_path("example-sdtm")),
+    regexp = "Detected domain SUPPDM from data."
+  )
+  expect_named(ld_sdtm, c("DM", "SUPPDM"))
+
+  expect_message(
+    ld_sdtm <- import_sdtm(path = test_path("example-sdtm"), auto_supp = TRUE),
+    regexp = "Detected domain SUPPDM from data."
+  )
+  expect_named(ld_sdtm, "DM")
+})
+

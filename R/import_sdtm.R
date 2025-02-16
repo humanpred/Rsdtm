@@ -6,6 +6,8 @@
 #'   first extension in \code{extension_choice} with a usable file will be used,
 #'   and a warning will be given for subsequent files.
 #' @param ignore_case Passed to \code{list.files} when loading a directory.
+#' @param auto_supp Automatically combine --SUPP data with the main SDTM domain
+#'   and remove the --SUPP data from the returned list of data.frames.
 #' @param return_type When loading a single file, what type of output should be
 #'   provided?
 #' @param ... Arguments passed to \code{rio::import}
@@ -57,8 +59,15 @@ import_sdtm <- function(path,
   }
 
   if (auto_supp) {
-    browser()
-    stop()
+    supp_domains <- names(ret)[startsWith(names(ret), "SUPP")]
+    for (current_supp in supp_domains) {
+      current_domain <- gsub(x = current_supp, pattern = "^SUPP", replacement = "")
+      if (!(current_domain %in% names(ret))) {
+        stop("Domain ", current_domain, " was not found when trying to auto-combine --SUPP data with ", current_supp)
+      }
+      ret[[current_domain]] <- metatools::combine_supp(ret[[current_domain]], supp = ret[[current_supp]])
+      ret[[current_supp]] <- NULL
+    }
   }
   ret
 }
